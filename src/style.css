@@ -1,0 +1,237 @@
+#nav{
+    width: 100%;
+    background-color: azure;
+    padding: 10px;
+    height: 40px;
+    font-size: 13px;
+    position: sticky;
+    top: 0;
+    z-index: 2px;
+}
+body{
+    margin: 0;
+    padding: 0;
+ overflow-x: hidden;
+}
+
+#navbar{
+    background-color: gray;
+    width: 100%;
+    color: white;
+    height: 80px;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+Navbar.Brand{
+position: relative;
+right: 200px;
+
+}
+#navbar button{
+    position: relative;
+    left: 30px;
+    top: 5px;
+background-color: white;
+color: gray;
+width: 100px;
+border-radius: 20px;
+height:35px;
+}
+
+.me-auto{
+    font-size: 14px;
+    margin-left: 30px;
+    position: relative;
+    left: 50px;
+    
+}
+
+/* //..............................circle image */
+.head{
+    display: flex;
+    gap: 20px;
+    font-size: 10px;
+    padding-left: 200px;
+    padding-top: 20px;
+    }
+    
+    .he{
+        height: 72px;
+        width: 72px;
+        border: 2px solid purple;
+        border-radius:  50%;
+        padding: 1.5px;
+        
+    
+    }
+    .he img{
+        /* border: 2px solid purple; */
+       border-radius: 50%;
+       
+    }
+    .he p{
+        margin-top: 5px;
+    }
+
+    /* //..........image......... */
+
+#img{
+display: flex;
+/* justify-content: space-around; */
+align-items: center;
+flex-wrap: wrap;
+margin-left: 150px;
+margin-right: 150px;
+margin-top: 80px;
+gap: 20px;
+}
+    
+ /* //...............card..................    */
+ #cardData
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    border-radius: 30px;
+    text-align: center;
+
+}
+
+#cardData img:hover{
+    border: 1px solid gray;
+
+}
+
+h3{
+    margin-top: 50px;
+}
+
+#icons{
+    position: relative;
+    left: 50px;
+    bottom: 10px;
+    font-size: 22px;
+    display: flex;
+   gap: 25px;
+    
+
+}
+
+/* ::first-letter {
+    font-size: 2em;
+    font-weight: bold; 
+   
+  } */
+
+
+  /* //footer..........// */
+  .kart{
+    width: 100%;
+    background-color: gray;
+    /* margin-top: 100px; */
+    padding:50px;
+    color: white;
+}
+
+.foot{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+   right: 100px;
+    
+}
+
+.foot p{
+    font-size: 20px;
+    color:white;
+    
+}
+
+.foot ul li{
+    color:white;
+    line-height: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.link1{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    
+
+}
+
+.l1{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    padding: 3px;
+    
+   
+}
+
+.l1 i{
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+}
+
+.link img{
+    margin-top: 20px;
+}
+
+hr{
+    margin-top: 50px;
+}
+
+ .mail{
+    font-size: 12px;
+    color: white;
+    margin-top: 50px;
+}
+
+/* //...........hovers using......... */
+
+    .card {
+        position: relative;
+        overflow: hidden; /* Content card se bahar na nikle */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+      
+      .card img {
+        transition: transform 0.3s ease-in-out; /* Smooth transition for hover */
+      }
+      
+      .card:hover img {
+        transform: scale(1.1); /* Slight zoom effect on hover */
+      }
+      
+      .card .overlay {
+        position: absolute;
+        bottom: 0; /* Image ke niche show hoga */
+        width: 100%;
+        background-color: white; /* Background white */
+        color: black; /* Text color black */
+        text-align: center;
+        padding: 10px 0;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        opacity: 0; /* Default hidden */
+        transition: opacity 0.3s ease-in-out;
+        border-top: 1px solid #ddd; /* Separate line between image and text */
+      }
+      
+      .card:hover .overlay {
+        opacity: 1; /* On hover, text visible hoga */
+      }
+
+     
