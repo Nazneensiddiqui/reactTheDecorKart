@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
+import { GoPackage } from "react-icons/go";
+import { BiCheckShield } from "react-icons/bi";
+import { IoMailOutline } from "react-icons/io5";
 
 import Carousel from 'react-bootstrap/Carousel';
-import b1 from "../image/img5.jpg"
-import b2 from "../image/img7.jpg"
-import b3 from "../image/img6.jpg"
+import b1 from "../image/img2.jpg"
+import b2 from "../image/img3.jpg"
+import b3 from "../image/img8.jpg"
 import a1 from "../image/a1.webp"
 import a2 from "../image/a2.webp"
 import a3 from "../image/a3.webp"
@@ -21,10 +23,13 @@ import Card from 'react-bootstrap/Card';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../cartSlice';
 
+import { useNavigate } from 'react-router-dom';
+
 const Decor=()=>{
 
   const [mydata, setMydata]= useState([]);
   const dispatch= useDispatch();
+  const navigate=useNavigate()
 
   //data ko get karne ke liye
 const[data , setdata]=useState([])
@@ -42,6 +47,10 @@ const cartDataAdd=(id, price, desc, myimg)=>{
   dispatch(addToCart({id:id, price:price, description:desc, image:myimg, qnty:1}))
  }
 
+ const Pro_Detail=(id)=>{
+navigate(`/prodect/${id}`)
+ }
+
 
 const ans=data.map((key)=>{
 
@@ -52,11 +61,12 @@ const ans=data.map((key)=>{
    <Card style={{width:"230px", marginTop:"20px"}}>
       {/* Image Section with Overlay */}
           <div className="card">
-            <img src={key.image} style={{ height: "240px", width: "100%" }} alt={key.description} />
-            <div className="overlay"  onClick={()=>{cartDataAdd(key.id, key.price, key.description, key.image)}}>Add to Cart</div>
+            <a href='#' onClick={()=>{Pro_Detail(key.id)}}>
+            <img src={key.image} style={{ height: "240px", width: "100%"  }} alt={key.description} /></a>
+            <div className="overlay"  onClick={()=>{cartDataAdd(key.id, key.price, key.description, key.image)}}>+Add to Cart</div>
           </div>
  <Card.Body>
-       <Card.Text style={{fontFamily:"time", fontSize:"14px"}}>
+       <Card.Text style={{fontFamily:"Times New Roman', Times, serif", fontSize:"12px"}}>
            {key.description} 
            <br/>
            <span > ₹ {key.price}/-</span>  
@@ -125,9 +135,30 @@ const ans=data.map((key)=>{
     <div id='cardData'>
   {ans}
     </div>
-    <div>
+    <div style={{fontFamily:"time",textAlign:"center",display:"flex",gap:"20px", marginTop:"50px",marginLeft:"80px"}}>          
+  <div style={{height:"150px", width:"400px"}}>
+    <GoPackage fontSize={24} />
+    <h6>SECURE PACKAGING</h6>
+    <p>A skilled packaging department & heavy duty packaging ensures utmost safety for even the most delicate products.</p>
+    </div>
+    <div style={{height:"150px", width:"400px"}}>
+<BiCheckShield fontSize={25} />
+  <h6>QUALITY GUARANTEE</h6>
+  <p>We rigorously test every product to ensure it meets or exceeds our patrons expectations. If it doesn't, we won't sell it.</p>
+</div>
+
+<div style={{height:"150px", width:"400px"}}>
+  <IoMailOutline  fontSize={24}/>
+<h6>CUSTOMER SERVICE</h6>
+<p>Award winning customer service - we are here to serve you. Get in touch!</p>
+</div>
+</div>
+
+<div>
       <img src={img} style={{width:"100%" ,marginTop:"100px"}}/>
     </div>
+
+    
   </>
     )
 }

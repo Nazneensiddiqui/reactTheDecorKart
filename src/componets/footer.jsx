@@ -4,6 +4,7 @@ import l2 from "../image/l2.webp";
 const Footer=()=>{
     return(
         <>
+        
 <div className="kart">
 <h3>The Decor Kart</h3>
 <div className="foot">

@@ -3,6 +3,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { FaArrowRight } from "react-icons/fa";
+import { GoPackage } from "react-icons/go";
+import { BiCheckShield } from "react-icons/bi";
+import { IoMailOutline } from "react-icons/io5";
+import { useState } from "react";
 
 import gf from "../image/gf1.webp"
 import de1 from "../image/de1.webp"
@@ -38,9 +42,31 @@ import hv1 from "../image/hv1.webp"
 import hv2 from "../image/hv2.webp"
 import p1 from "../image/p1.webp"
 import p2 from "../image/p2.webp"
+import lm1 from "../image/lm1.webp"
+import lm2 from "../image/lm2.jpg"
+import lm3 from "../image/lm3.webp"
+import lm4 from "../image/lm4.webp"
+import lm5 from "../image/lm5.webp"
+import lm6 from "../image/lm6.webp"
+import lm7 from "../image/lm7.webp"
+import lm8 from "../image/lm8.webp"
+import img from "../image/img.jpg"
 
 
 const Gift=()=>{
+  const[bgclr , setBgclr]=useState("white")
+  const[clr ,setClr]=useState("GrayText")
+
+  const MouseEnter=()=>{
+    setBgclr(" rgb(185, 148, 148)")
+    setClr("white")
+  }
+
+  const mouseLeave=()=>{
+    setBgclr("white")
+    setClr("GrayText")
+  }
+
     const settings = {
         dots: true,
         infinite: true,
@@ -141,10 +167,70 @@ const Gift=()=>{
            <div style={{height:"500px", width:"465px", backgroundColor:"cream",fontFamily:"time",textAlign:"center",paddingTop:"100px"}}>
                    <h1>Illuminating Elegance</h1>
                    <p style={{fontSize:"20px"}}>Ethereal by day, magical by night</p>
-                   <button style={{width:"150px", height:"50px", backgroundColor:"white",color:"GrayText"}}>SHOP NOW</button>
+                   <button style={{width:"150px", height:"50px", backgroundColor:bgclr ,color:clr}} 
+                        onMouseEnter={MouseEnter} onMouseLeave={mouseLeave}
+                   >
+                    SHOP NOW</button>
            </div>
            <img src={p2} width={440} height={500}/>
         </div>
+        <div style={{fontFamily:"time",textAlign:"center",marginTop:"50px"}}>
+          <h1>Because Self-Love Knows No Limits</h1>
+      </div>
+      <div style={{display:"flex", gap:"30px", margin:"40px"}}>
+      <div>
+        <img src={lm1} width={600} height={625}/>
+      </div>
+      <div>
+      <img src={lm2} width={300} height={300}/><br/><br/>
+      <img src={lm3} width={300} height={300}/>
+      </div>
+      <div>
+      <img src={lm4 } width={300} height={300}/><br/><br/>
+      <img src={lm5} width={300} height={300}/> 
+      </div>
+      </div>
+      <div style={{height:"600px", width:"1150px", backgroundColor:"rgb(226, 220, 220)",display:"flex", margin:"100px"}}>
+      <div style={{fontFamily:"time",textAlign:"center",paddingTop:"180px",paddingLeft:"100px"}}>
+        <h1>Fancy a Cuppa?</h1>
+        <p>The perfect companions for savoring the first sip of
+        your favorite brew and starting your day with a warm
+         embrace.</p>
+        <button style={{width:"150px", height:"50px", backgroundColor:bgclr ,color:clr}} 
+                        onMouseEnter={MouseEnter} onMouseLeave={mouseLeave}
+                   >
+                    SHOP NOW</button></div>
+        <img src={lm6} width={650} height={600} style={{marginLeft:"160px"}}/>
+      </div>
+      
+<div style={{display:"flex"}}>
+    <img src={lm8 }  width={700}/>
+      <img src={lm7}  width={700}/> 
+</div>
+
+           
+<div style={{fontFamily:"time",textAlign:"center",display:"flex",gap:"20px", marginTop:"50px",marginLeft:"80px"}}>          
+  <div style={{height:"150px", width:"400px"}}>
+    <GoPackage fontSize={24} />
+    <h6>SECURE PACKAGING</h6>
+    <p>A skilled packaging department & heavy duty packaging ensures utmost safety for even the most delicate products.</p>
+    </div>
+    <div style={{height:"150px", width:"400px"}}>
+<BiCheckShield fontSize={25} />
+  <h6>QUALITY GUARANTEE</h6>
+  <p>We rigorously test every product to ensure it meets or exceeds our patrons expectations. If it doesn't, we won't sell it.</p>
+</div>
+
+<div style={{height:"150px", width:"400px"}}>
+  <IoMailOutline  fontSize={24}/>
+<h6>CUSTOMER SERVICE</h6>
+<p>Award winning customer service - we are here to serve you. Get in touch!</p>
+</div>
+
+</div>
+<div>
+      <img src={img} style={{width:"100%" ,marginTop:"100px"}}/>
+    </div>
 
        
    

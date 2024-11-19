@@ -163,6 +163,11 @@ h3{
     margin-top: 20px;
     display: flex;
     gap: 10px;
+    color: rgb(226, 220, 220);
+  
+  
+
+
     
 
 }
@@ -222,8 +227,9 @@ hr{
         color: black; /* Text color black */
         text-align: center;
         padding: 10px 0;
-        font-size: 1rem;
-        font-weight: bold;
+        font-size: 14px;
+        font-family: 'Times New Roman', Times, serif;
+        /* font-weight: bold; */
         text-transform: uppercase;
         opacity: 0; /* Default hidden */
         transition: opacity 0.3s ease-in-out;
@@ -233,5 +239,7 @@ hr{
       .card:hover .overlay {
         opacity: 1; /* On hover, text visible hoga */
       }
+
+     
 
      

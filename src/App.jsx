@@ -5,6 +5,7 @@ import Cart from "./pages/cart"
 import Kitchen from "./pages/kitchen";
 import Bath from "./pages/bath";
 import Gift from "./pages/gift";
+import ProdectDetail from "./pages/prodectDetail";
 
 const App=()=>{
   return(
@@ -18,6 +19,7 @@ const App=()=>{
               <Route path="kitchen" element={<Kitchen/>}/>
               <Route path="bath" element={<Bath/>}/>
               <Route path="gift" element={<Gift/>}/>
+              <Route path="prodect/:id" element={<ProdectDetail/>}/>
              
              </Route>
            </Routes>
