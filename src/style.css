@@ -240,6 +240,31 @@ hr{
         opacity: 1; /* On hover, text visible hoga */
       }
 
-     
+/* //...............shop now,,,,,,,,,,,,,, */
+      #shoppage
+{
+    display: flex;
+    justify-content: space-between;
+margin-top: 50px;
+    margin-left: 30px;
+   
+}
+
+#shopmenu
+{
+    width: 20%;
+    background-color: rgb(234, 238, 240);
+    height: 400px;
+   border: 1px solid gray;
+   padding: 20px;
+   margin-top: 30px;
+   font-size: 14px;
+   font-family: 'Times New Roman', Times, serif;
+}
+#shopdata
+{
+    width: 80%;
+}
+
 
      

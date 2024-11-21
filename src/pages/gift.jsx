@@ -8,6 +8,8 @@ import { BiCheckShield } from "react-icons/bi";
 import { IoMailOutline } from "react-icons/io5";
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import gf from "../image/gf1.webp"
 import de1 from "../image/de1.webp"
 import de2 from "../image/de2.webp"
@@ -56,6 +58,7 @@ import img from "../image/img.jpg"
 const Gift=()=>{
   const[bgclr , setBgclr]=useState("white")
   const[clr ,setClr]=useState("GrayText")
+  const navigate=useNavigate();
 
   const MouseEnter=()=>{
     setBgclr(" rgb(185, 148, 148)")
@@ -76,6 +79,10 @@ const Gift=()=>{
         autoplay: true, // Auto slide
         autoplaySpeed: 2000, // Time between each slide
       };
+
+      const shop=()=>{
+        navigate("/shopNow")
+      }
     
 
     return(
@@ -167,10 +174,10 @@ const Gift=()=>{
            <div style={{height:"500px", width:"465px", backgroundColor:"cream",fontFamily:"time",textAlign:"center",paddingTop:"100px"}}>
                    <h1>Illuminating Elegance</h1>
                    <p style={{fontSize:"20px"}}>Ethereal by day, magical by night</p>
-                   <button style={{width:"150px", height:"50px", backgroundColor:bgclr ,color:clr}} 
+                <a href="#" onClick={shop()} > <button style={{width:"150px", height:"50px", backgroundColor:bgclr ,color:clr}} 
                         onMouseEnter={MouseEnter} onMouseLeave={mouseLeave}
                    >
-                    SHOP NOW</button>
+                    SHOP NOW</button></a> 
            </div>
            <img src={p2} width={440} height={500}/>
         </div>

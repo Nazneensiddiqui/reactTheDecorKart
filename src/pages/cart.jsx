@@ -3,12 +3,18 @@ import Table from 'react-bootstrap/Table';
 import { FaPlusCircle } from "react-icons/fa";
 import { FaCircleMinus } from "react-icons/fa6";
 import { qntyInc, qntyDec,itemRemove } from "../cartSlice";
+import rem from "../image/rem.png";
+
+import { useState } from "react";
+
+
 const Cart=()=>{
-    const MyCart= useSelector(state=>state.mycart.cart);
+const MyCart= useSelector(state=>state.mycart.cart);
    const dispatch=useDispatch();
 
 
-    const qtyIncrement=(id)=>{
+   
+   const qtyIncrement=(id)=>{
          dispatch(qntyInc({id:id}));
     }
 
@@ -51,7 +57,8 @@ const Cart=()=>{
              <td> {key.qnty * key.price} </td>
 
                 <td>
-                   <button onClick={()=>{removeItem(key.id)}}> Remove</button>
+                <button onClick={()=>{removeItem(key.id)}}> <img src={rem} width={25} height={25}/>
+                   </button>
 
                 </td>
                </tr>
@@ -86,6 +93,12 @@ const Cart=()=>{
         </tbody>
         </Table>
         </div>
+        <center> 
+          <button style={{width:"300px", height:"50px",backgroundColor:"green", color:"white", margin:"50px"}}
+          >PROCESS TO PAY</button>
+        </center>
+
+       
 
            
         </>
