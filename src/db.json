@@ -20,8 +20,8 @@
         },
         {
             "id":3,
-            "description": "  Dainty Blue & White Katoris - Set of 6",
-            "price":"2450",
+            "description": "Classic Gold Angel Table Top Clock",
+            "price":"980",
             "image":"https://thedecorkart.com/cdn/shop/files/009A2580_330x.jpg?v=1721175738",
             "material":"Resin",
             "pack":"1 Unit",
@@ -30,8 +30,8 @@
         },
         {
             "id":4,
-            "description": "Rendezvous with Blue - Wall Mounted ",
-            "price":"2860",
+            "description": "Embrace of Serenity Figurine ",
+            "price":"2260",
             "image":"https://thedecorkart.com/cdn/shop/files/009A2640_c4d45ab2-12c2-4aa6-9de6-297ab6571b38_330x.jpg?v=1718454031",
             "material":"Resin",
             "pack":"1 Unit",
@@ -39,8 +39,8 @@
         },
         {
             "id":5,
-            "description": "Rendezvous with Blue - Wall Mounted ",
-            "price":"2540",
+            "description": "Forever Connected Figurine ",
+            "price":"2250",
             "image":"https://thedecorkart.com/cdn/shop/files/009A2644_7a69de2c-bd47-425b-aec2-be67fd436c58_330x.jpg?v=1718454032",
             "material":"Resin",
             "pack":"1 Unit",
@@ -48,8 +48,8 @@
         },
         {
             "id":6,
-            "description": "Rendezvous with Blue - Wall Mounted ",
-            "price":"2390",
+            "description": "Willow Tree Anniversary Figu ",
+            "price":"1860",
             "image":"https://thedecorkart.com/cdn/shop/files/009A2662_b880cdbe-8891-4004-b9b5-96c1b7d76818_330x.jpg?v=1718454031",
             "material":"Resin",
             "pack":"1 Unit",
@@ -57,8 +57,8 @@
         },
         {
             "id":7,
-            "description": "Rendezvous with Blue - Wall Mounted ",
-            "price":"20000",
+            "description": "Happy Family Figurine ",
+            "price":"1960",
             "image":"https://thedecorkart.com/cdn/shop/files/009A2668_7be9b203-03e4-4671-9605-cec335837d1a_330x.jpg?v=1718454033",
             "material":"Resin",
             "pack":"1 Unit",
@@ -66,8 +66,8 @@
         },
         {
             "id":8,
-            "description": "Rendezvous with Blue - Wall Mounted ",
-            "price":"2500",
+            "description": "Unconditional Love Figurine",
+            "price":"1780",
             "image":"https://thedecorkart.com/cdn/shop/files/009A2674_330x.jpg?v=1718454032",
             "material":"Resin",
             "pack":"1 Unit",
@@ -75,10 +75,10 @@
         },
         {
             "id":9,
-            "description": "Rendezvous with Blue - Wall Mounted ",
-            "price":"2740",
+            "description": "'Angelic Musician' Fine Porcelain Figurine",
+            "price":"1390",
             "image":"https://thedecorkart.com/cdn/shop/files/009A3868.1_b83209ad-18a1-46e3-8aaa-cf82d0364e5d_330x.jpg?v=1699949574",
-            "material":"Resin",
+            "material":"Porcelain",
             "pack":"1 Unit",
             "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
         },
@@ -89,7 +89,7 @@
              "image":"https://thedecorkart.com/cdn/shop/files/009A2961_330x.jpg?v=1718886056",
              "material":"Resin",
              "pack":"1 Unit",
-             "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
+             "dimansion":"2.5 cm x 2 cm x 4.5 cm (LxWxH)"
         },
         {
             "id":11,
@@ -111,12 +111,12 @@
         },
         {
             "id":13,
-            "description": "Rendezvous with Blue - Wall Mounted ",
-            "price":"15000",
+            "description": "Basket of Treats Angel Cherub Figurine",
+            "price":"1590",
             "image":"https://thedecorkart.com/cdn/shop/files/009A2995_330x.jpg?v=1721393889",
             "material":"Resin",
             "pack":"1 Unit",
-            "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
+            "dimansion":"19 cm x 14 cm x 14 cm (LxWxH)"
         },
         {
             "id":14,
@@ -189,137 +189,197 @@
      "id":21,
      "description": "Rendezvous with Blue - Wall Mounted ",
       "price":"25400",
-      "image":"https://thedecorkart.com/cdn/shop/products/009A0769_b8463415-138a-4f4b-997f-e9db67c237af_330x.jpg?v=1701846504"
+      "image":"https://thedecorkart.com/cdn/shop/products/009A0769_b8463415-138a-4f4b-997f-e9db67c237af_330x.jpg?v=1701846504",
+      "material":"Resin",
+      "pack":"1 Unit",
+      "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":22,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/products/009A0769.1_330x.jpg?v=1701846504"
+     "image":"https://thedecorkart.com/cdn/shop/products/009A0769.1_330x.jpg?v=1701846504",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":23,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/products/009A0797_a4974aa1-3a97-485d-9f00-0442c09853b2_330x.jpg?v=1701846215"
+     "image":"https://thedecorkart.com/cdn/shop/products/009A0797_a4974aa1-3a97-485d-9f00-0442c09853b2_330x.jpg?v=1701846215",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":24,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/products/DSC_8181_330x.jpg?v=1571439599"
+     "image":"https://thedecorkart.com/cdn/shop/products/DSC_8181_330x.jpg?v=1571439599",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":25,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/products/IMG_1403_330x.jpg?v=1678602236"
+     "image":"https://thedecorkart.com/cdn/shop/products/IMG_1403_330x.jpg?v=1678602236",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":26,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/products/IMG_1821_330x.jpg?v=1675074309"
+     "image":"https://thedecorkart.com/cdn/shop/products/IMG_1821_330x.jpg?v=1675074309",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":27,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/products/IMG_7214_330x.jpg?v=1675247464"
+     "image":"https://thedecorkart.com/cdn/shop/products/IMG_7214_330x.jpg?v=1675247464",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":28,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/products/IMG_7479_f7512d98-33e7-4805-9df4-da4dfc47a693_330x.jpg?v=1715264175"
+     "image":"https://thedecorkart.com/cdn/shop/products/IMG_7479_f7512d98-33e7-4805-9df4-da4dfc47a693_330x.jpg?v=1715264175",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":29,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/products/IMG_7803_330x.jpg?v=1676282113"
+     "image":"https://thedecorkart.com/cdn/shop/products/IMG_7803_330x.jpg?v=1676282113",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":30,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/products/IMG_8506_a5338e10-a2dd-456a-bd98-5b3ae85077cd_330x.jpg?v=1658150394"
+     "image":"https://thedecorkart.com/cdn/shop/products/IMG_8506_a5338e10-a2dd-456a-bd98-5b3ae85077cd_330x.jpg?v=1658150394",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":31,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/products/TDK_4-oct-206192_330x.jpg?v=1602156607"
+     "image":"https://thedecorkart.com/cdn/shop/products/TDK_4-oct-206192_330x.jpg?v=1602156607",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":32,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/products/009A3532_b2c59428-cef4-4036-8f05-7fd626d1d845_330x.jpg?v=1697106153"
+     "image":"https://thedecorkart.com/cdn/shop/products/009A3532_b2c59428-cef4-4036-8f05-7fd626d1d845_330x.jpg?v=1697106153",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":33,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/files/2T8A8021_330x.jpg?v=1724679862"
+     "image":"https://thedecorkart.com/cdn/shop/files/2T8A8021_330x.jpg?v=1724679862",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":34,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/files/2T8A7944_330x.jpg?v=17246735104"
+     "image":"https://thedecorkart.com/cdn/shop/files/2T8A7944_330x.jpg?v=17246735104",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":35,
     "description": "Rendezvous with Blue - Wall Mounted ",
      "price":"25400",
-     "image":"https://thedecorkart.com/cdn/shop/files/3_7fc139ff-5fb4-4c0d-912e-28bc28e47d13_330x.jpg?v=1696408286"
+     "image":"https://thedecorkart.com/cdn/shop/files/3_7fc139ff-5fb4-4c0d-912e-28bc28e47d13_330x.jpg?v=1696408286",
+     "material":"Resin",
+     "pack":"1 Unit",
+     "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 
 },
 {
     "id":36,
     "description": "Floret Full Dinner Plate - Set of 6 ",
     "price":"10750",
-    "image":"https://thedecorkart.com/cdn/shop/files/009A0910_165x.jpg?v=1726570462"
+    "image":"https://thedecorkart.com/cdn/shop/files/009A0910_165x.jpg?v=1726570462",
+    "material":"Resin",
+    "pack":"1 Unit",
+    "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 },
 {
     "id":37,
   "description": "Halcyon Blue 2-Tier Cake Stand",
     "price":"2800",
-    "image":"https://thedecorkart.com/cdn/shop/files/009A3913_500x.jpg?v=1728391997"
+    "image":"https://thedecorkart.com/cdn/shop/files/009A3913_500x.jpg?v=1728391997",
+    "material":"Resin",
+    "pack":"1 Unit",
+    "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 },
 {
     "id":38,
     "description": "  Dainty Blue & White Katoris - Set of 6",
     "price":"2450",
-    "image":"https://thedecorkart.com/cdn/shop/files/009A2020_165x.jpg?v=1718583769"
+    "image":"https://thedecorkart.com/cdn/shop/files/009A2020_165x.jpg?v=1718583769",
+    "material":"Resin",
+    "pack":"1 Unit",
+    "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
    
 },
 {
     "id":39,
     "description": "Rendezvous with Blue - Wall Mounted ",
     "price":"2390",
-    "image":"https://thedecorkart.com/cdn/shop/files/009A49477_720x.jpg?v=1719471649"
+    "image":"https://thedecorkart.com/cdn/shop/files/009A49477_720x.jpg?v=1719471649",
+    "material":"Resin",
+    "pack":"1 Unit",
+    "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 },
 {
     "id":40,
     "description": "Rendezvous with Blue - Wall Mounted ",
     "price":"2500",
-    "image":"https://thedecorkart.com/cdn/shop/files/DSC_4529_330x_crop_center.jpg?v=1724845793"
+    "image":"https://thedecorkart.com/cdn/shop/files/DSC_4529_330x_crop_center.jpg?v=1724845793",
+    "material":"Resin",
+    "pack":"1 Unit",
+    "dimansion":"13 cm x 9 cm x 20 cm (LxWxH)"
 }
 
 

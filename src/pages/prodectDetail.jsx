@@ -28,8 +28,22 @@ const loadData=()=>{
     })
 }
 
+const loadData1=()=>{
+  let api=`http://localhost:3000/kitchen/${id}`;
+  axios.get(api).then((res)=>{
+      setMydata(res.data)
+      console.log(res.data)
+  })
+}
+
+
 useEffect(()=>{
     loadData();
+}, [])
+
+
+useEffect(()=>{
+  loadData1();
 }, [])
 
     const cartDataAdd=(id, price, desc, myimg)=>{

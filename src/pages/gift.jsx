@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { GoPackage } from "react-icons/go";
 import { BiCheckShield } from "react-icons/bi";
 import { IoMailOutline } from "react-icons/io5";
-import { useState } from "react";
+
 
 import { useNavigate } from "react-router-dom";
 
@@ -56,19 +56,9 @@ import img from "../image/img.jpg"
 
 
 const Gift=()=>{
-  const[bgclr , setBgclr]=useState("white")
-  const[clr ,setClr]=useState("GrayText")
   const navigate=useNavigate();
 
-  const MouseEnter=()=>{
-    setBgclr(" rgb(185, 148, 148)")
-    setClr("white")
-  }
-
-  const mouseLeave=()=>{
-    setBgclr("white")
-    setClr("GrayText")
-  }
+ 
 
     const settings = {
         dots: true,
@@ -78,7 +68,7 @@ const Gift=()=>{
         slidesToScroll: 1, // 1 image will move at a time
         autoplay: true, // Auto slide
         autoplaySpeed: 2000, // Time between each slide
-      };
+      }
 
       const shop=()=>{
         navigate("/shopNow")
@@ -93,6 +83,7 @@ const Gift=()=>{
         <div align="center" style={{marginTop:"50px", fontFamily:"time"}}> 
         <h1>Shop by Personality</h1>
         <p>We have something special for everyone</p></div>
+
 
         <div style={{marginTop:"50px"}}>
       <Slider {...settings}>
@@ -174,10 +165,8 @@ const Gift=()=>{
            <div style={{height:"500px", width:"465px", backgroundColor:"cream",fontFamily:"time",textAlign:"center",paddingTop:"100px"}}>
                    <h1>Illuminating Elegance</h1>
                    <p style={{fontSize:"20px"}}>Ethereal by day, magical by night</p>
-                <a href="#" onClick={shop()} > <button style={{width:"150px", height:"50px", backgroundColor:bgclr ,color:clr}} 
-                        onMouseEnter={MouseEnter} onMouseLeave={mouseLeave}
-                   >
-                    SHOP NOW</button></a> 
+
+                <a href="#" onClick={shop} > <button style={{width:"150px", height:"50px", backgroundColor:"lightcoral" ,color:"white"}} >SHOP NOW</button></a> 
            </div>
            <img src={p2} width={440} height={500}/>
         </div>
@@ -203,10 +192,8 @@ const Gift=()=>{
         <p>The perfect companions for savoring the first sip of
         your favorite brew and starting your day with a warm
          embrace.</p>
-        <button style={{width:"150px", height:"50px", backgroundColor:bgclr ,color:clr}} 
-                        onMouseEnter={MouseEnter} onMouseLeave={mouseLeave}
-                   >
-                    SHOP NOW</button></div>
+        <a href="#" onClick={shop}><button style={{width:"150px", height:"50px", backgroundColor:"lightcoral",color:"white"}} 
+          > SHOP NOW</button></a></div>
         <img src={lm6} width={650} height={600} style={{marginLeft:"160px"}}/>
       </div>
       

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import { GoPackage } from "react-icons/go";
 import { BiCheckShield } from "react-icons/bi";
@@ -27,6 +28,7 @@ const Kitchen=()=>{
 
   const [mydata, setMydata]= useState([]);
   const dispatch= useDispatch();
+  const navigate=useNavigate();
 
   //data ko get karne ke liye
 const[data , setdata]=useState([])
@@ -44,6 +46,11 @@ const cartDataAdd=(id, price, desc, myimg)=>{
   dispatch(addToCart({id:id, price:price, description:desc, image:myimg, qnty:1}))
  }
 
+ 
+ const Pro_Detail=(id)=>{
+  navigate(`/prodect/${id}`)
+   }
+
 
 const ans=data.map((key)=>{
 
@@ -54,7 +61,8 @@ const ans=data.map((key)=>{
    <Card style={{width:"230px", marginTop:"20px"}}>
       {/* Image Section with Overlay */}
           <div className="card">
-            <img src={key.image} style={{ height: "240px", width: "100%" }} alt={key.description} />
+          <a href='#' onClick={()=>{Pro_Detail(key.id)}}>
+            <img src={key.image} style={{ height: "240px", width: "100%" }} alt={key.description} /></a>
             <div className="overlay"  onClick={()=>{cartDataAdd(key.id, key.price, key.description, key.image)}}>Add to Cart</div>
           </div>
  <Card.Body>

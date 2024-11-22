@@ -4,14 +4,15 @@ import { FaPlusCircle } from "react-icons/fa";
 import { FaCircleMinus } from "react-icons/fa6";
 import { qntyInc, qntyDec,itemRemove } from "../cartSlice";
 import rem from "../image/rem.png";
+import { useNavigate } from "react-router-dom";
 
-import { useState } from "react";
+
 
 
 const Cart=()=>{
 const MyCart= useSelector(state=>state.mycart.cart);
    const dispatch=useDispatch();
-
+const navigate=useNavigate()
 
    
    const qtyIncrement=(id)=>{
@@ -24,6 +25,10 @@ const MyCart= useSelector(state=>state.mycart.cart);
 
  const removeItem=(id)=>{
   dispatch(itemRemove({id:id}))
+}
+
+const process=()=>{
+  navigate("/Contact")
 }
 
     let totalAmount=0;
@@ -57,7 +62,7 @@ const MyCart= useSelector(state=>state.mycart.cart);
              <td> {key.qnty * key.price} </td>
 
                 <td>
-                <button onClick={()=>{removeItem(key.id)}}> <img src={rem} width={25} height={25}/>
+                <button onClick={()=>{removeItem(key.id)}}> Remove
                    </button>
 
                 </td>
@@ -95,6 +100,7 @@ const MyCart= useSelector(state=>state.mycart.cart);
         </div>
         <center> 
           <button style={{width:"300px", height:"50px",backgroundColor:"green", color:"white", margin:"50px"}}
+          onClick={()=>{process()}}
           >PROCESS TO PAY</button>
         </center>
 
