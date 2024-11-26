@@ -37,6 +37,15 @@ const loadData1=()=>{
 }
 
 
+const loadData2=()=>{
+  let api=`http://localhost:3000/light/${id}`;
+  axios.get(api).then((res)=>{
+      setMydata(res.data)
+      console.log(res.data)
+  })
+}
+
+
 useEffect(()=>{
     loadData();
 }, [])
@@ -44,6 +53,11 @@ useEffect(()=>{
 
 useEffect(()=>{
   loadData1();
+}, [])
+
+
+useEffect(()=>{
+  loadData2();
 }, [])
 
     const cartDataAdd=(id, price, desc, myimg)=>{

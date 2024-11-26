@@ -4,18 +4,24 @@ import { FaPlusCircle } from "react-icons/fa";
 import { FaCircleMinus } from "react-icons/fa6";
 import { qntyInc, qntyDec,itemRemove } from "../cartSlice";
 import rem from "../image/rem.png";
-import { useNavigate } from "react-router-dom"
+import { useNavigate ,useParams} from "react-router-dom"
 import { useState } from "react";
+import axios from "axios";
 
-import pay from "../image/pay.webp"
-import pay1 from "../image/pay1.png"
-import ru from "../image/ru.png"
-import visa from "../image/VISA.png"
+import CashonDelivery from "../pages/cashOnDelivery";
+import InternetBanking from "../pages/InterNetBanking";
+import DebitCard from "../pages/DebitCard";
+import Upi from "../pages/Upi";
+
+
 
 const Contact=()=>{
-  const [openDiv, setOpenDiv] = useState(false);
+  const {amt}= useParams();
+ const[input,setInput]=useState({});
 
-    const MyCart= useSelector(state=>state.mycart.cart);
+ const [paymethod, setPayMethod]= useState("");
+
+ const MyCart= useSelector(state=>state.mycart.cart);
     const dispatch=useDispatch();
  const navigate=useNavigate()
  
@@ -31,6 +37,17 @@ const Contact=()=>{
   const removeItem=(id)=>{
    dispatch(itemRemove({id:id}))
  }
+
+const paydone=()=>{
+  let api="http://localhost:3000/user";
+        axios.post(api,input).then((res)=>{
+          console.log(res);
+        toast.success("Save Data Successfully!!")
+        })
+        console.log(paydone)
+      navigate("/paydone")
+}
+ 
  
  
      let totalAmount=0;
@@ -74,14 +91,48 @@ const Contact=()=>{
          )
      })
 
-     const handleRadioClick = () => {
-      alert("working");
-      setOpenDiv(openDiv);
-    }
 
-    const paydone=()=>{
-      navigate("/paydone")
-    }
+
+    //<<<<<<<<<<<<<<< HANDLE INPUT TAGE>>>>>>>>>>>>>>>>>>>>
+  const handleInput=(e)=>{
+    let name=e.target.name;
+    let value=e.target.value;
+    setInput(values=>({...values , [name]:value}));
+    console.log(input);
+}
+
+
+    
+ 
+
+
+
+    // .............payment ...................
+const handleInput1=(e)=>{
+  let val=e.target.value;
+  setPayMethod(val);
+ 
+}
+    
+ let ans1;
+ if (paymethod=="cash")
+ {
+    ans1=<CashonDelivery/>
+ }
+ else 
+ if(paymethod=="internet")
+ {
+     ans1=<InternetBanking/>
+ }
+ else 
+ if (paymethod=="debit")
+ {
+     ans1=<DebitCard/>
+ }
+ else
+ {
+     ans1=<Upi/>
+ }
 
     return(
         <>
@@ -94,7 +145,7 @@ const Contact=()=>{
                          <h5>Contact</h5>
                     <a href="#" style={{color:"black"}}>log in</a></div>
                    
-                    <input type="text" placeholder="Email or Mobile phone number"
+                    <input type="text" placeholder="Email or Mobile phone number" name="email" onChange={handleInput}
                 style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"5px"}}/>
                 
                 <div style={{display:"flex", fontSize:"14px",marginLeft:"38px", marginTop:"8px"}}>
@@ -105,35 +156,26 @@ const Contact=()=>{
                          <h5>Delivery</h5>
                     </div>
                    
-                    <input type="text" placeholder="Country/Region"
+                    <input type="text" placeholder="Country/Region"   name="country" onChange={handleInput}
                 style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/>
              
-                <div style={{display:"flex",marginLeft:"35px", gap:"20px"}}>     
-                <input type="text" placeholder="First Name"
-                style={{width:"290px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/> 
-                     
-                     <input type="text" placeholder="Last Name"
-                style={{width:"290px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/>   
+                <div style={{display:"flex",marginLeft:"28px", gap:"20px"}}>     
+                <input type="text" placeholder="Name"   name="name" onChange={handleInput}
+                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/>   
                 </div>
 
-                <input type="text" placeholder="Address"
+                <input type="text" placeholder="Address"    name="address" onChange={handleInput}
                 style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/>
               
-              <input type="text" placeholder="Apartment, Suite, etc (Optional)"
-                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/>
-               
-
-                <div style={{display:"flex",marginLeft:"35px", gap:"20px"}}>     
-                <input type="text" placeholder="City"
-                style={{width:"188px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/> 
+               <div style={{display:"flex",marginLeft:"28px", gap:"20px"}}>     
+                <input type="text" placeholder="City"   name="city" onChange={handleInput}
+                style={{width:"290px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/> 
                      
-                     <input type="text" placeholder="State"
-                style={{width:"188px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/> 
+                     <input type="text" placeholder="State"  name="state" onChange={handleInput}
+                style={{width:"290px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/> 
 
-                  <input type="text" placeholder="PIN Code"
-                style={{width:"188px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/>   
                 </div>
-                <input type="text" placeholder="Phone"
+                <input type="text" placeholder="Phone"  name="phoneno" onChange={handleInput}
                 style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/>
 
 <div style={{display:"flex", fontSize:"14px",marginLeft:"38px", marginTop:"8px"}}>
@@ -152,52 +194,28 @@ const Contact=()=>{
 
                            <div style={{display:"flex", justifyContent:"space-between",marginTop:"px",marginLeft:"50px",marginRight:"55px",fontSize:"16px"}}> 
                              All transactions are secure and encrypted. </div>
-                             
-        <div style={{ margin: "20px" }}>
-      {/* Radio input with heading */}
-      <div style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px", display: "flex", alignItems: "center", cursor: "pointer" }}>
-        <input type="radio" id="toggleDiv" name="toggle" onClick={handleRadioClick} style={{ marginRight: "10px" }}/>
-        <label htmlFor="toggleDiv" style={{ fontSize: "16px" }}>  Cards, UPI, NB, Wallets, BNPL by PayU India 
-          <img src={pay} style={{width:"50px", height:"30px", marginLeft:"50px",border:"1px solid rgb(216, 218, 221)"}}/>
-          <img src={pay1} style={{width:"50px", height:"30px",border:"1px solid rgb(216, 218, 221)"}}/>
-          <img src={ru} style={{width:"50px", height:"30px",border:"1px solid rgb(216, 218, 221)"}}/>
-          <img src={visa} style={{width:"50px", height:"30px",border:"1px solid rgb(216, 218, 221)"}}/>
-        </label>
-      </div>
-      {/* Conditionally rendered div */}
-      {openDiv && (
-        <div style={{ width:"600px", height:"100px", padding: "10px", border: "1px solid #ccc",borderRadius: "4px", backgroundColor: "#f9f9f9", fontSize:"12px"
-          }} >
-          <p aling="center">After clicking “Pay now”, you will be redirected to Cards,<br/>
-           UPI, NB, Wallets, BNPL by PayU India to complete your<br/> purchase securely.</p>
-        </div>
-      )}
-      </div>
+                           
+    <div id="paymethod">
+              
+<div>
+                <input type="radio" name="paymethod" value="cash" onChange={handleInput1} style={{marginLeft:"10px"}}/>  Cash on Delivery
+                <input type="radio" name="paymethod" value="internet" onChange={handleInput1} style={{marginLeft:"150px"}}/> Internet Banking<br/>
 
-      <div>
-      {/* Radio input with heading */}
-      <div style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px", display: "flex", alignItems: "center", cursor: "pointer" }}>
-        <input type="radio" id="toggleDiv" name="toggle" onClick={handleRadioClick} style={{ marginRight: "10px" }}/>
-        <label htmlFor="toggleDiv" style={{ fontSize: "16px" }}> Cash on Delivery (COD)
-        </label>
-      </div>
-      {/* Conditionally rendered div */}
-      {openDiv && (
-        <div style={{ width:"600px", height:"50px", padding: "10px", border: "1px solid #ccc",borderRadius: "4px", backgroundColor: "#f9f9f9",fontSize:"12px"
-          }} >
-          <p>Get Free Shipping by switching to Prepaid Payments - UPI, Cards, Wallets, Net Banking</p>
-        </div>
-      )}
-      </div>
-      <button onClick={paydone}>Complete Order</button>
-
-                  
+                <input type="radio" name="paymethod" value="debit" onChange={handleInput1} style={{marginRight:"6px"}}/> Debit/Credit Card
+                <input type="radio" name="paymethod" value="upi"  onChange={handleInput1} style={{marginLeft:"136px"}}/> UPI/Phone Pay
+                </div>
+                
+                <div>
+                 {ans1}
+            </div>
+            </div>
+            <button onClick={paydone} >Complete Order</button>     
              </div>
- 
+           
             
     
            <div >
-          
+    {/* ////////////////Display to ADDTOCART ////////////////////////      */}
            <Table striped bordered hover>
       <thead>
         <tr>

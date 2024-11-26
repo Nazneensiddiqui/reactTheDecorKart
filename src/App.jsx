@@ -9,6 +9,11 @@ import ProdectDetail from "./pages/prodectDetail";
 import Shop from  "./pages/shopNow"
 import Contact from "./pages/Contact"
 import PaymentDone from "./pages/payDone";
+import AdminDash from "./Admin/adminDash";
+import InsertProduct from "./Admin/InsertProduct";
+import DeshBoard from "./Admin/deshBoard";
+import Light from "./pages/Lighting";
+
 
 const App=()=>{
   return(
@@ -21,12 +26,19 @@ const App=()=>{
               <Route path="decor" element={<Decor/>}/>
               <Route path="cart" element={<Cart/>}/> 
               <Route path="kitchen" element={<Kitchen/>}/>
+              <Route path="lighting" element={<Light/>}/>
               <Route path="bath" element={<Bath/>}/>
              <Route path="prodect/:id" element={<ProdectDetail/>}/>
               <Route path="shopNow" element={<Shop/>}/>
              <Route path="contact" element={<Contact/>}/>
              <Route path="paydone" element={<PaymentDone/>}/>
-             </Route>
+           </Route>
+           </Routes>
+           <Routes>
+            <Route path="admindash" element={<AdminDash/>}>
+            <Route path="deshboard" element={<DeshBoard/>}/>
+             <Route path="insertproduct" element={<InsertProduct/>}/>
+            </Route>
            </Routes>
          </BrowserRouter>
         

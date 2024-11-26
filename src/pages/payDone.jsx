@@ -8,7 +8,7 @@ const PaymentDone=()=>{
 
     setTimeout(()=>{
         setIsLoader(false);
-    }, 2000);
+    }, 3000);
 
     return(
         <>
@@ -19,8 +19,8 @@ const PaymentDone=()=>{
              <LoaderComp/>
              </div>
         ):(
-            <h2 align="center" style={{color:"green", marginTop:"150px"}}> Your Order Succesfully Placed <br/>
-           We will send your products within 6 to 7 working days</h2>
+            <h6 align="center" style={{color:"green", marginTop:"150px"}}> Your Order Succesfully Placed <br/>
+           We will send your products within 6 to 7 working days</h6>
         )}
          </>
     )

@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../cartSlice';
-import { useNavigate } from "react-router-dom";
+
 
 const Shop=()=>{
     const [lowPrice, setLowPrice]=useState("");
@@ -15,7 +14,7 @@ const Shop=()=>{
 
     const[bgclr , setBgclr]=useState("white")
     const[clr ,setClr]=useState("GrayText")
-    const navigate=useNavigate();
+   
   
     const MouseEnter=()=>{
       setBgclr(" rgb(185, 148, 148)")
@@ -37,10 +36,8 @@ const Shop=()=>{
           autoplaySpeed: 2000, // Time between each slide
         };
   
-        const shop=()=>{
-          navigate("/shopNow")
-        }
-
+       
+// ,,,,,,,,,,,,,,,cards,,,,,,,,,,,,,,,,,,,,
 
     const loadData=()=>{
         let api="http://localhost:3000/cords";
@@ -60,6 +57,26 @@ const Shop=()=>{
      useEffect(()=>{
         loadData();
      }, []);
+
+    //  .,,,,,,,,,,,,,,,,,,,,,,,kitchen,,,,,,,,,,,,,,
+    const loadData1=()=>{
+      let api="http://localhost:3000/kitchen";
+      axios.get(api).then((res)=>{
+          setMydata(res.data);
+      })
+   }
+
+   const showData1=()=>{
+      let api="http://localhost:3000/kitchen";
+      axios.get(api).then((res)=>{
+          setShowFilter(false);
+          setMydata(res.data);
+      })
+   }
+  
+   useEffect(()=>{
+      loadData1();
+   }, []);
     
      useEffect(()=>{
         if (lowPrice=="" && heighPrice=="")
@@ -94,8 +111,6 @@ const Shop=()=>{
            <br/>
            <span > ₹ {key.price}/-</span>  
        </Card.Text>
-       {/* <Button variant="primary" 
-         onClick={()=>{cartDataAdd(key.id, key.price, key.description, key.image)}} >add to cart</Button> */}
      </Card.Body>
    </Card>
    </div>
@@ -155,10 +170,10 @@ const Shop=()=>{
           Enter High Price  <input type="text" value={heighPrice}
           onChange={(e)=>{setHeighPrice(e.target.value)}} />
             <br/><br/><br/>
-            <a href="#" onClick={shop()} > <button style={{width:"130px", height:"30px", backgroundColor:bgclr ,color:clr}} 
-                        onMouseEnter={MouseEnter} onMouseLeave={mouseLeave}
+           <button style={{width:"130px", height:"40px", backgroundColor:bgclr ,color:clr}} 
+                        onMouseEnter={MouseEnter} onMouseLeave={mouseLeave}  onClick={showData}
                    >
-                    SHOP NOW</button></a> 
+                    SHOP NOW</button> 
 
 
             </div>

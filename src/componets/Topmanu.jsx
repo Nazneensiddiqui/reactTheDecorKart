@@ -12,15 +12,55 @@ import { useNavigate } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
+import { useState } from 'react';
+import axios from 'axios';
+
 const Topmanu=()=>{
-  const mycart= useSelector(state=>state.mycart.cart);
+ const mycart= useSelector(state=>state.mycart.cart);
    //console.log(mycart);
   const navigate= useNavigate();
 
+  //Admin login open
+  const [show, setShow] = useState(false);
 
-   const cartPage=()=>{
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [adminid, setAdminid]=useState("");
+  const [password, setPassword]=useState("");
+
+ const cartPage=()=>{
     navigate("/cart");
    }
+
+   const handleSubmit=()=>{
+    let api=`http://localhost:3000/admin/?adminid=${adminid}`;
+     axios.get(api).then((res)=>{
+         if (res.data.length>=1)
+         {
+             if (res.data[0].password==password)
+             {
+              navigate("/admindash")
+             }
+             else 
+             {
+               alert("Invalid Password!")
+             }
+         }
+         else 
+         {
+           alert("Invalid AdminID")
+         }
+ 
+     })
+    //  setAdminid("");
+    //  setPassword("")
+   }
+ 
+
 
   const cartLen= mycart.length;
     return(
@@ -35,7 +75,7 @@ const Topmanu=()=>{
     <div id="navbar">
     <Navbar  data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home" style={{alignItems:"center", marginBottom:"30px", fontSize:"25px",}}>THE DECOR KART</Navbar.Brand>
+          <Navbar.Brand href="#home" style={{alignItems:"center", marginBottom:"30px", fontSize:"25px", color:"white"}}>THE DECOR KART</Navbar.Brand>
           <Nav className="me-auto">
           <Nav.Link as={Link} to="gift"> Gift Atelier </Nav.Link>
           <Nav.Link as={Link} to="Decor">Decor </Nav.Link>
@@ -57,7 +97,7 @@ const Topmanu=()=>{
     <p style={{ fontSize: "10px", marginLeft: "5px" }}>cart</p>
             </div>
 
-            <div> <GrUserAdmin  />
+            <div> <a href='#'><GrUserAdmin  onClick={handleShow} style={{color:"white"}}/></a>
             <p style={{fontSize:"10px"}}>Account</p></div>
 
             <div> <FaSearch />
@@ -66,9 +106,33 @@ const Topmanu=()=>{
           </Nav>
         </Container>
       </Navbar>
-
 </div>
+
+   <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton style={{backgroundColor:"rgb(211, 217, 223)", color:"gray"}}>
+          <Modal.Title align="center" style={{backgroundColor:"rgb(211, 217, 223)", color:"gray"}}>Admin Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body align="center" style={{backgroundColor:"rgb(211, 217, 223)", color:"gray"}}>
+        Enter Id : <input type="text" value={adminid} onChange={(e)=>{setAdminid(e.target.value)}} style={{marginLeft:"50px", borderRadius:"5px"}}/>
+        <br/><br/>
+        Enter Password : <input type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}}  style={{borderRadius:"5px"}}/>
+        <br/>
+        
+
+
+        </Modal.Body>
+        <Modal.Footer style={{backgroundColor:"rgb(211, 217, 223)", color:"gray"}}>
+          <Button variant="secondary" onClick={handleClose} style={{backgroundColor:"red"}}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleSubmit} style={{backgroundColor:"green"}}>
+           Login
+          </Button>
+        </Modal.Footer>
+      </Modal>
      
+
+
         </>
     )
 }
