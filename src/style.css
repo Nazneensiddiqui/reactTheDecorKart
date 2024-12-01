@@ -6,7 +6,7 @@
     font-size: 13px;
     position: sticky;
     top: 0;
-    z-index: 2px;
+    z-index: 10px;
 }
 body{
     margin: 0;
@@ -123,6 +123,19 @@ h3{
     
 
 }
+
+#searching{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    border-radius: 30px;
+    text-align: center;
+
+}
+
 
 /* ::first-letter {
     font-size: 2em;

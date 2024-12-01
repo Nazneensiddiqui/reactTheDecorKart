@@ -62,8 +62,9 @@ const process=()=>{
              <td> {key.qnty * key.price} </td>
 
                 <td>
-                <button onClick={()=>{removeItem(key.id)}}> Remove
-                   </button>
+                  <img src={rem} width={25} height={25} onClick={()=>{removeItem(key.id)}}/>
+                {/* <button onClick={()=>{removeItem(key.id)}}> 
+                   </button> */}
 
                 </td>
                </tr>
@@ -82,7 +83,7 @@ const process=()=>{
           <th> Price</th>
           <th> Quantity</th>
           <th> Total</th>
-          <th>  </th>
+          <th> Remove </th>
         </tr>
       </thead>
       <tbody>

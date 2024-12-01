@@ -21,7 +21,7 @@ const InsertProduct=()=>{
         let api="http://localhost:3000/light";
         axios.post(api,input).then((res)=>{
           console.log(res);
-        toast.success("Add Product Successfully!!")
+        toast.success("Upload Product Successfully!!")
         })
         navigate("");
     }
@@ -29,7 +29,7 @@ const InsertProduct=()=>{
     return(
         <>
         <div className="form">
-       <h1 align="center">Insert Item</h1>
+       <h1 align="center">Upload Item</h1>
       
  <div className="row1">    
   Enter Description   :  <input type="text" name="description" onChange={handlInput}/>
@@ -46,7 +46,7 @@ const InsertProduct=()=>{
          Image Link  : <input type="text" name="image" onChange={handlInput}/>
     </div> <br/> <br/>
    
-        <button onClick={handlSubmit} >Save Data</button>
+        <button onClick={handlSubmit} >Upload Item</button>
         </div>
        
         <ToastContainer/>

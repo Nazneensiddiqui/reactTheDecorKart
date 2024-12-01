@@ -97,7 +97,7 @@ useEffect(()=>{
             <Button style={{backgroundColor:" rgb(6, 65, 32)", width:"400px",height:"50px", color:"white" }}
              onClick={()=>{cartDataAdd(mydata.id, mydata.price, mydata.description, mydata.image)}}
              >AddToCart</Button>
-             <div style={{width:"400px", height:"100px", backgroundColor:"rgb(226, 220, 220)", marginTop:"20px",
+             <div style={{width:"400px", height:"130px", backgroundColor:"rgb(226, 220, 220)", marginTop:"20px",
                 padding:"20px"}}>
              <BiSolidOffer />  Offers
           <p>Get 15% Off Your First Order</p>

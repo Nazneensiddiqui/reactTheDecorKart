@@ -1,17 +1,3 @@
-import a2 from "../image/a2.webp"
-import a3 from "../image/a3.webp"
-import a4 from "../image/a4.webp"
-import a5 from "../image/a5.webp"
-import a1 from "../image/a1.webp"
-import bath1 from "../image/bath1.webp"
-import img from "../image/img.jpg"
-
-import Card from 'react-bootstrap/Card';
-
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../cartSlice';
-
-import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -20,15 +6,31 @@ import { BiCheckShield } from "react-icons/bi";
 import { IoMailOutline } from "react-icons/io5";
 
 
-const Bath = () => {
-    const [mydata, setMydata]= useState([]);
+import Card from 'react-bootstrap/Card';
+
+import b1 from "../image/img2.jpg"
+import b2 from "../image/img3.jpg"
+import a1 from "../image/a1.webp"
+import a2 from "../image/a2.webp"
+import a3 from "../image/a3.webp"
+import a4 from "../image/a4.webp"
+import a5 from "../image/a5.webp"
+import img from "../image/img.jpg"
+
+
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../cartSlice';
+import { useNavigate } from 'react-router-dom';
+
+const Walldecore=()=>{
+    // const [mydata, setMydata]= useState([]);
     const dispatch= useDispatch();
     const navigate=useNavigate()
   
     //data ko get karne ke liye
   const[data , setdata]=useState([])
   const loadData=()=>{
-    let api="http://localhost:3000/bath";
+    let api="http://localhost:3000/wall";
     axios.get(api).then((res)=>{
       setdata(res.data)
     })
@@ -46,8 +48,8 @@ const Bath = () => {
    }
   
   
-  const ans=data.map((key)=>{
-  
+   const ans=data.map((key)=>{
+
     return(
      <>
   
@@ -75,17 +77,13 @@ const Bath = () => {
   
   })
   
-  
-
-
-
-
-    return(
+return(
         <>
-        <div style={{marginTop:"50px"}}>
-            <img src={bath1}  width="100%" height={300}/>
-        </div>
-        <div id="img">
+       <div style={{marginTop:"50px"}}>
+        <img src={b2}/>
+        </div> 
+       
+    <div id="img">
             <div>
             <img src={a1} width={320} height={420}/><br/><br/>
             <img src={a4} width={320} height={300} />
@@ -94,16 +92,19 @@ const Bath = () => {
             <img src={a2} width={290} height={350} /><br/>
             <img src={a5} width={290} height={380} style={{marginTop:"20px"}}/>
             </div>
-            <div style={{marginBottom:"160px"}}>
-                <img src={a3} width={320} height={420}  /><br/>
+            <div style={{marginBottom:"140px"}}>
+                <img src={a3} width={320} height={420}  /><br/><br/>
  <span style={{textAlign:"center", marginLeft:"50px",fontFamily:"time", marginTop:"100px"}}><h2>Magical Illumination</h2>
     <p>Create the perfect ambiance with<br/> lighting that adds warmth and style<br/> to every room</p></span> 
   </div>
-  </div>
-  <h4 align="center"  style={{fontFamily:"time",marginTop:"50px"}}>ALL BATH DECORE</h4>
+  </div> 
+    <div style={{marginTop:"50px"}}>
+      <img src={b1} style={{width:"100%", height:"500px"}}/>
+    </div>
+    <h2 align="center"  style={{fontFamily:"time",marginTop:"50px"}}>ALL WALL DECOR</h2>
     <div id='cardData'>
-    {ans}
-    </div> 
+  {ans}
+    </div>
     <div style={{fontFamily:"time",textAlign:"center",display:"flex",gap:"20px", marginTop:"50px",marginLeft:"80px"}}>          
   <div style={{height:"150px", width:"400px"}}>
     <GoPackage fontSize={24} />
@@ -127,8 +128,9 @@ const Bath = () => {
       <img src={img} style={{width:"100%" ,marginTop:"100px"}}/>
     </div>
 
-        </>
+    
+  </>
     )
 }
 
-export default Bath;
+export default  Walldecore;

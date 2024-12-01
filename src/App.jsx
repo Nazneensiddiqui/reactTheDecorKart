@@ -13,6 +13,11 @@ import AdminDash from "./Admin/adminDash";
 import InsertProduct from "./Admin/InsertProduct";
 import DeshBoard from "./Admin/deshBoard";
 import Light from "./pages/Lighting";
+import Display from "./Admin/Display";
+import Search from "./pages/serach";
+import UpdataItem from "./Admin/updataItem";
+import Walldecore from "./pages/wall";
+import Furniture from "./pages/furniture";
 
 
 const App=()=>{
@@ -27,17 +32,22 @@ const App=()=>{
               <Route path="cart" element={<Cart/>}/> 
               <Route path="kitchen" element={<Kitchen/>}/>
               <Route path="lighting" element={<Light/>}/>
+              <Route path="wall" element={<Walldecore/>}/>
               <Route path="bath" element={<Bath/>}/>
+              <Route path="furniture" element={<Furniture/>}/>
              <Route path="prodect/:id" element={<ProdectDetail/>}/>
               <Route path="shopNow" element={<Shop/>}/>
              <Route path="contact" element={<Contact/>}/>
              <Route path="paydone" element={<PaymentDone/>}/>
+             <Route path="search" element={<Search/>}/>
+             <Route path="updataitem" element={<UpdataItem/>}/>
            </Route>
            </Routes>
            <Routes>
             <Route path="admindash" element={<AdminDash/>}>
             <Route path="deshboard" element={<DeshBoard/>}/>
              <Route path="insertproduct" element={<InsertProduct/>}/>
+             <Route path="display" element={<Display/>}/>
             </Route>
            </Routes>
          </BrowserRouter>

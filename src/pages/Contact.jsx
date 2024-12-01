@@ -13,6 +13,8 @@ import InternetBanking from "../pages/InterNetBanking";
 import DebitCard from "../pages/DebitCard";
 import Upi from "../pages/Upi";
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 const Contact=()=>{
@@ -81,8 +83,7 @@ const paydone=()=>{
               <td> {key.qnty * key.price} </td>
  
                  <td>
-                 <button onClick={()=>{removeItem(key.id)}}> <img src={rem} width={25} height={25}/>
-                    </button>
+                 <img src={rem} width={25} height={25} onClick={()=>{removeItem(key.id)}}/>
  
                  </td>
                 </tr>
@@ -98,6 +99,7 @@ const paydone=()=>{
     let name=e.target.name;
     let value=e.target.value;
     setInput(values=>({...values , [name]:value}));
+    setPayMethod(value);
     console.log(input);
 }
 
@@ -107,25 +109,25 @@ const paydone=()=>{
 
 
 
-    // .............payment ...................
-const handleInput1=(e)=>{
-  let val=e.target.value;
-  setPayMethod(val);
+//     // .............payment ...................
+// const handleInput1=(e)=>{
+//   let val=e.target.value;
+//   setPayMethod(val);
  
-}
+// }
     
  let ans1;
- if (paymethod=="cash")
+ if (paymethod=="cash on Delivery")
  {
     ans1=<CashonDelivery/>
  }
  else 
- if(paymethod=="internet")
+ if(paymethod=="internet Banking")
  {
      ans1=<InternetBanking/>
  }
  else 
- if (paymethod=="debit")
+ if (paymethod =="debit Card")
  {
      ans1=<DebitCard/>
  }
@@ -141,31 +143,31 @@ const handleInput1=(e)=>{
                 <h1 style={{marginTop:"50px",fontFamily:'Times New Roman, Times, serif'}}>THE DECOR KART</h1>
                <div id="contact">   
                 <div id="fome">
-                    <div style={{display:"flex", justifyContent:"space-between",marginTop:"20px",marginLeft:"60px",marginRight:"60px"}}> 
+                    <div style={{display:"flex", justifyContent:"space-between",marginTop:"20px",marginLeft:"20px",marginRight:"60px"}}> 
                          <h5>Contact</h5>
                     <a href="#" style={{color:"black"}}>log in</a></div>
                    
                     <input type="text" placeholder="Email or Mobile phone number" name="email" onChange={handleInput}
-                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"5px"}}/>
+                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"5px",marginRight:"30px"}}/>
                 
-                <div style={{display:"flex", fontSize:"14px",marginLeft:"38px", marginTop:"8px"}}>
+                <div style={{display:"flex", fontSize:"14px", marginTop:"8px", marginLeft:"25px"}}>
                 <input type="checkbox" style={{width:"15px",height:"15px", marginTop:"4px", border: "1px solid rgb(199, 206, 214)"}}/> 
                 Email me with news and offers</div>
 
-                <div style={{display:"flex", justifyContent:"space-between",marginTop:"20px",marginLeft:"50px",marginRight:"55px"}}> 
+                <div style={{display:"flex", justifyContent:"space-between",marginTop:"20px",marginLeft:"20px",marginRight:"55px"}}> 
                          <h5>Delivery</h5>
                     </div>
                    
-                    <input type="text" placeholder="Country/Region"   name="country" onChange={handleInput}
-                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/>
+                    <input type="text" placeholder="Name"   name="name" onChange={handleInput}
+                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px",marginRight:"30px"}}/>
              
                 <div style={{display:"flex",marginLeft:"28px", gap:"20px"}}>     
-                <input type="text" placeholder="Name"   name="name" onChange={handleInput}
-                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/>   
+                <input type="text" placeholder="Address"    name="address" onChange={handleInput}
+                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px",marginRight:"55px"}}/>   
                 </div>
 
-                <input type="text" placeholder="Address"    name="address" onChange={handleInput}
-                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/>
+                <input type="text" placeholder="Phone"  name="phoneno" onChange={handleInput}
+                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px" ,marginRight:"30px"}}/>
               
                <div style={{display:"flex",marginLeft:"28px", gap:"20px"}}>     
                 <input type="text" placeholder="City"   name="city" onChange={handleInput}
@@ -175,11 +177,11 @@ const handleInput1=(e)=>{
                 style={{width:"290px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/> 
 
                 </div>
-                <input type="text" placeholder="Phone"  name="phoneno" onChange={handleInput}
-                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px"}}/>
+                <input type="text" placeholder="Amount"  name="amount" onChange={handleInput}
+                style={{width:"600px", height:"50px",borderRadius:"5px",border: "1px solid rgb(199, 206, 214)",marginTop:"10px",marginRight:"30px"}}/>
 
-<div style={{display:"flex", fontSize:"14px",marginLeft:"38px", marginTop:"8px"}}>
-                <input type="checkbox" style={{width:"15px",height:"15px", marginTop:"4px", border: "1px solid rgb(199, 206, 214)"}}/> 
+<div style={{display:"flex", fontSize:"14px",marginLeft:"30px", marginTop:"8px"}}>
+                <input type="checkbox" style={{width:"15px",height:"15px", marginTop:"4px", border: "1px solid rgb(199, 206, 214)" }}/> 
                 Save this information for next time</div>
 
                 <div style={{display:"flex", justifyContent:"space-between",marginTop:"20px",marginLeft:"50px",marginRight:"55px"}}> 
@@ -198,11 +200,11 @@ const handleInput1=(e)=>{
     <div id="paymethod">
               
 <div>
-                <input type="radio" name="paymethod" value="cash" onChange={handleInput1} style={{marginLeft:"10px"}}/>  Cash on Delivery
-                <input type="radio" name="paymethod" value="internet" onChange={handleInput1} style={{marginLeft:"150px"}}/> Internet Banking<br/>
+                <input type="radio" name="paymethod" value="cash on Delivery" onChange={handleInput} style={{marginLeft:"10px"}}/>  Cash on Delivery
+                <input type="radio" name="paymethod" value="internet Banking" onChange={handleInput} style={{marginLeft:"150px"}}/> Internet Banking<br/>
 
-                <input type="radio" name="paymethod" value="debit" onChange={handleInput1} style={{marginRight:"6px"}}/> Debit/Credit Card
-                <input type="radio" name="paymethod" value="upi"  onChange={handleInput1} style={{marginLeft:"136px"}}/> UPI/Phone Pay
+                <input type="radio" name="paymethod" value="debit Card" onChange={handleInput} style={{marginRight:"5px"}}/> Debit/Credit Card
+                <input type="radio" name="paymethod" value="upi"  onChange={handleInput} style={{marginLeft:"136px"}}/> UPI/Phone Pay
                 </div>
                 
                 <div>
@@ -240,13 +242,9 @@ const handleInput1=(e)=>{
         </tbody>
         </Table>
         </div>
-       
-
-    </div>            
-          
-
-             </center>
-    
+        </div>            
+     </center>
+             <ToastContainer/>  
         </>
     )
 }

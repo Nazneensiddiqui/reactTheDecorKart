@@ -8,9 +8,12 @@ import { FaIdCard } from "react-icons/fa";
 import { GrCreditCard } from "react-icons/gr";
 import { FaRegFaceGrinHearts } from "react-icons/fa6";
 
+import { useNavigate } from "react-router-dom";
+
 
 
 const AdminDash=()=>{
+    const navigate=useNavigate();
 
  return(
         <>
@@ -26,11 +29,11 @@ const AdminDash=()=>{
             <center><h1 style={{color:"orangered"}}>Admin</h1></center>
             <ul type="none">        
 <li><Link to="deshBoard" style={{color:"orangered", textDecoration:"none"}}><FiBell />  Dashboard</Link></li>
-<li><Link to="insertproduct" style={{color:"orangered", textDecoration:"none"}}><FaIdCard />  Add Item</Link></li>
-<li><Link to="" style={{color:"orangered", textDecoration:"none"}}><GrCreditCard />  Display Item</Link></li>
-<li><Link to="" style={{color:"orangered", textDecoration:"none"}}> <FaRegFaceGrinHearts /> Update Item</Link></li>
-<li><button>Sign in</button></li>
-<li><button>Log in</button></li>
+<li><Link to="insertproduct" style={{color:"orangered", textDecoration:"none"}}><FaIdCard /> Upload Item's</Link></li>
+<li><Link to="display" style={{color:"orangered", textDecoration:"none"}}>  <FaRegFaceGrinHearts /> Customer Details </Link></li>
+<li><Link to="updataitem" style={{color:"orangered", textDecoration:"none"}}> <GrCreditCard />  Update Item</Link></li>
+
+<li><button onClick={()=>{navigate("/gift")}}>Log out</button></li>
 </ul>
 </div>
     <div className="item2">

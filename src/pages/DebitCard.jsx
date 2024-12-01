@@ -4,7 +4,7 @@ const DebitCard=()=>{
     return(
         <>
         
-          <img src={img3} width="200px" height="200px" />
+          <img src={img3} width="300px" height="200px" />
 
         </>
     )

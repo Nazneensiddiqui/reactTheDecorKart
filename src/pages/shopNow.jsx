@@ -77,7 +77,35 @@ const Shop=()=>{
    useEffect(()=>{
       loadData1();
    }, []);
-    
+
+//,,,,,,,,,,,,,,,,,,tryforall api,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+
+// const fetchProducts = async () => {
+//   try {
+//     setLoading(true);
+
+//     // API calls for different categories
+//     const category1 = await axios.get(`http://localhost:3000/cords`);
+//     const category2 = await axios.get(`http://localhost:3000/kitchen`);
+//     const category3 = await axios.get(`http://localhost:3000/light`);
+
+//     // Combine all products
+//     const allProducts = [...category1.data, ...category2.data, ...category3.data];
+//     setMydata(allProducts);
+//     setLoading(false);
+//   } catch (error) {
+//     console.error("Error fetching products:", error);
+//     setLoading(false);
+//   }
+// };
+
+// useEffect(() => {
+//   fetchProducts(); // Fetch all products on component mount
+// }, []);
+
+
+
      useEffect(()=>{
         if (lowPrice=="" && heighPrice=="")
         {

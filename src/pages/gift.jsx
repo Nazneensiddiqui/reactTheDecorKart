@@ -10,7 +10,7 @@ import { IoMailOutline } from "react-icons/io5";
 
 import { useNavigate } from "react-router-dom";
 
-import gf from "../image/gf1.webp"
+import git from "../image/git.webp"
 import de1 from "../image/de1.webp"
 import de2 from "../image/de2.webp"
 import de3 from "../image/de3.webp"
@@ -28,9 +28,7 @@ import cd4 from "../image/cd4.webp"
 import cd5 from "../image/cd5.webp"
 import cd6 from "../image/cd6.webp"
 import cd7 from "../image/cd7.webp"
-import cd8 from "../image/cd8.webp"
-import cd9 from "../image/cd9.webp"
-import cd10 from "../image/cd10.webp"
+
 import mk1 from "../image/mk1.webp"
 import mk2 from "../image/mk2.webp"
 import mk3 from "../image/mk3.webp"
@@ -78,7 +76,7 @@ const Gift=()=>{
     return(
         <>
         <div style={{marginTop:"50px"}}>
-            <img src={gf}/>
+            <img src={git}/>
         </div>
         <div align="center" style={{marginTop:"50px", fontFamily:"time"}}> 
         <h1>Shop by Personality</h1>
@@ -112,9 +110,7 @@ const Gift=()=>{
         <div><img src={cd5} alt="Image 5" className="img-thumbnail" /></div>
         <div><img src={cd6} alt="Image 6" className="img-thumbnail" /></div>
         <div><img src={cd7} alt="Image 7" className="img-thumbnail" /></div>
-        <div><img src={cd8} alt="Image 8" className="img-thumbnail" /></div>
-        <div><img src={cd9} alt="Image 9" className="img-thumbnail" /></div>
-        <div><img src={cd10} alt="Image 10" className="img-thumbnail" /></div>
+      
       </Slider>
     </div>
     <div align="center" style={{marginTop:"50px", fontFamily:"time"}}> 

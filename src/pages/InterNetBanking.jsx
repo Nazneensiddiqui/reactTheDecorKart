@@ -4,7 +4,7 @@ const InternetBanking=()=>{
     return(
         <>
          
-          <img src={img2} width="200px" height="200px" />
+          <img src={img2} width="300px" height="200px" />
 
         </>
     )

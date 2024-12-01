@@ -8,7 +8,7 @@ import { IoMailOutline } from "react-icons/io5";
 
 import Carousel from 'react-bootstrap/Carousel';
 import b1 from "../image/img5.jpg"
-import b2 from "../image/img7.jpg"
+import b2 from "../image/img4.jpg"
 import b3 from "../image/img6.jpg"
 import a1 from "../image/a1.webp"
 import a2 from "../image/a2.webp"
@@ -131,7 +131,7 @@ const ans=data.map((key)=>{
     <div style={{marginTop:"50px"}}>
       <img src={bn}/>
     </div>
-    <h1 align="center" style={{fontFamily:"time",marginTop:"50px"}}>ALL KITCHEN & DINING</h1>
+    <h5 align="center" style={{fontFamily:"time",marginTop:"50px"}}>ALL KITCHEN & DINING</h5>
     <div id='cardData'>
   {ans}
     </div>

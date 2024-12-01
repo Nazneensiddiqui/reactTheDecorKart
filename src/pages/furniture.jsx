@@ -5,17 +5,14 @@ import { GoPackage } from "react-icons/go";
 import { BiCheckShield } from "react-icons/bi";
 import { IoMailOutline } from "react-icons/io5";
 
-import Carousel from 'react-bootstrap/Carousel';
-import b1 from "../image/img7.jpg"
-import b2 from "../image/img9.jpg"
-import b3 from "../image/img8.jpg"
+import furn from "../image/furn.webp"
 import a1 from "../image/a1.webp"
 import a2 from "../image/a2.webp"
 import a3 from "../image/a3.webp"
 import a4 from "../image/a4.webp"
 import a5 from "../image/a5.webp"
 import img from "../image/img.jpg"
-import img1 from "../image/img1.jpg"
+import img8 from "../image/img8.jpg"
 
 
 import Card from 'react-bootstrap/Card';
@@ -25,15 +22,16 @@ import { addToCart } from '../cartSlice';
 
 import { useNavigate } from 'react-router-dom';
 
-const Decor=()=>{
+const Furniture=()=>{
 
+  const [mydata, setMydata]= useState([]);
   const dispatch= useDispatch();
   const navigate=useNavigate()
 
   //data ko get karne ke liye
 const[data , setdata]=useState([])
 const loadData=()=>{
-  let api="http://localhost:3000/cords";
+  let api="http://localhost:3000/Furniture";
   axios.get(api).then((res)=>{
     setdata(res.data)
   })
@@ -84,33 +82,8 @@ const ans=data.map((key)=>{
 
     return(
         <>
-        <div style={{paddingTop:"50px"}}>
-      <Carousel>
-      <Carousel.Item interval={1000}>
-        <img src={b1} />
-        <Carousel.Caption>
-          {/* <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item interval={500}>
-      <img src={b2} />
-        <Carousel.Caption>
-          {/* <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-      <img src={b3} />
-        <Carousel.Caption>
-          {/* <h3>Third slide label</h3> */}
-          {/* <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            ,msdfg;'q*-/*'
-          </p> */}
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+      <div style={{marginTop:"50px"}}>
+        <img src={furn} width={1350} height={400}/>
     </div>
     <div id="img">
             <div>
@@ -128,9 +101,9 @@ const ans=data.map((key)=>{
   </div>
   </div> 
     <div style={{marginTop:"50px"}}>
-      <img src={img1} style={{width:"100%", height:"500px"}}/>
+      <img src={img8} style={{width:"100%", height:"500px"}}/>
     </div>
-    <h5 align="center"  style={{fontFamily:"time",marginTop:"50px"}}>ALL DECOR</h5>
+    <h5 align="center"  style={{fontFamily:"time",marginTop:"50px"}}>All FURNITURE</h5>
     <div id='cardData'>
   {ans}
     </div>
@@ -161,4 +134,8 @@ const ans=data.map((key)=>{
   </>
     )
 }
-export default Decor;
+export default Furniture;
+
+
+
+

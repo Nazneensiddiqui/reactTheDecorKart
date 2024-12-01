@@ -5,7 +5,7 @@ const CashonDelivery=()=>{
     return(
         <>
         
-          <img src={img1} width="200px" height="200px" />
+          <img src={img1} width="300px" height="200px" />
 
         </>
     )

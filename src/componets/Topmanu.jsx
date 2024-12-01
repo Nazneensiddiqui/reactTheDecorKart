@@ -18,6 +18,10 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import axios from 'axios';
 
+
+
+
+
 const Topmanu=()=>{
  const mycart= useSelector(state=>state.mycart.cart);
    //console.log(mycart);
@@ -31,6 +35,7 @@ const Topmanu=()=>{
 
   const [adminid, setAdminid]=useState("");
   const [password, setPassword]=useState("");
+
 
  const cartPage=()=>{
     navigate("/cart");
@@ -81,11 +86,11 @@ const Topmanu=()=>{
           <Nav.Link as={Link} to="Decor">Decor </Nav.Link>
             <Nav.Link as={Link} to="kitchen"> Kitchen & Dining</Nav.Link>
             <Nav.Link as={Link} to="lighting"> Lighting </Nav.Link>
-            <Nav.Link as={Link} to="walldecor"> Wall Decor</Nav.Link>
+            <Nav.Link as={Link} to="wall"> Wall Decor</Nav.Link>
             <Nav.Link as= {Link} to="bath"> Bath Decor </Nav.Link>
             <Nav.Link as={Link} to="furniture"> Furniture </Nav.Link>
             
-            <button>Get App</button>
+            <button onClick={()=>{navigate("/gift")}}>Get App</button>
 
            <div id='icons'>
             <div><IoIosEye /><p style={{fontSize:"10px"}}>Viewed</p></div>
@@ -100,7 +105,7 @@ const Topmanu=()=>{
             <div> <a href='#'><GrUserAdmin  onClick={handleShow} style={{color:"white"}}/></a>
             <p style={{fontSize:"10px"}}>Account</p></div>
 
-            <div> <FaSearch />
+            <div><a href='#' onClick={()=>{  navigate("/search")}}><FaSearch  style={{color:"white"}}/></a>
             <p style={{fontSize:"10px"}}>Search</p></div>
          </div>
           </Nav>
@@ -109,20 +114,17 @@ const Topmanu=()=>{
 </div>
 
    <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton style={{backgroundColor:"rgb(211, 217, 223)", color:"gray"}}>
-          <Modal.Title align="center" style={{backgroundColor:"rgb(211, 217, 223)", color:"gray"}}>Admin Login</Modal.Title>
+        <Modal.Header closeButton style={{backgroundColor:"rgb(211, 217, 223)", color:"orangered"}}>
+          <Modal.Title align="center" style={{backgroundColor:"rgb(211, 217, 223)", color:"orangered"}}>Admin Login</Modal.Title>
         </Modal.Header>
-        <Modal.Body align="center" style={{backgroundColor:"rgb(211, 217, 223)", color:"gray"}}>
+        <Modal.Body align="center" style={{backgroundColor:"rgb(211, 217, 223)", color:"orangered"}}>
         Enter Id : <input type="text" value={adminid} onChange={(e)=>{setAdminid(e.target.value)}} style={{marginLeft:"50px", borderRadius:"5px"}}/>
         <br/><br/>
         Enter Password : <input type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}}  style={{borderRadius:"5px"}}/>
         <br/>
-        
-
-
-        </Modal.Body>
+         </Modal.Body>
         <Modal.Footer style={{backgroundColor:"rgb(211, 217, 223)", color:"gray"}}>
-          <Button variant="secondary" onClick={handleClose} style={{backgroundColor:"red"}}>
+          <Button variant="secondary" onClick={handleClose} style={{backgroundColor:"orangered"}}>
             Close
           </Button>
           <Button variant="primary" onClick={handleSubmit} style={{backgroundColor:"green"}}>
@@ -130,6 +132,7 @@ const Topmanu=()=>{
           </Button>
         </Modal.Footer>
       </Modal>
+
      
 
 

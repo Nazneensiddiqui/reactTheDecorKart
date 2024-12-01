@@ -99,7 +99,7 @@ const ans=data.map((key)=>{
     <div style={{marginTop:"50px"}}>
       <img src={li1} style={{width:"100%", height:"500px"}}/>
     </div>
-    <h2 align="center"  style={{fontFamily:"time",marginTop:"50px"}}>ALL DECOR</h2>
+    <h5 align="center"  style={{fontFamily:"time",marginTop:"50px"}}>ALL LIGHTING </h5>
     <div id='cardData'>
   {ans}
     </div>
