@@ -40,9 +40,9 @@ const PaymentDone=()=>{
              <LoaderComp/>
              </div>
         ):(
-            <h3 align="center" style={{color:"gray", margin:"150px"}}>  Thank you {mydata.name}<br/> <br/>
+            <h6 align="center" style={{color:"gray", margin:"150px"}}>  Thank you {mydata.name}<br/> <br/>
             Your Order Succesfully Placed <br/>
-           We will send your products within 6 to 7 working days</h3>
+           We will send your products within 6 to 7 working days</h6>
         )}
 
 

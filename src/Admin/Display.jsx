@@ -57,17 +57,10 @@ return(
                  </a>
   </td> */}
 </tr>
-
-
-
-    </>
+  </>
 )
 })
-
-
-
-
-    return(
+ return(
         <>
         <div align="center" style={{marginTop:"20px",marginLeft:"270px", fontSize:"14px"}}>
       <table  border="2px solid red" width="1050px"  >

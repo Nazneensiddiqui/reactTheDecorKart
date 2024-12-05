@@ -39,44 +39,72 @@ const Shop=()=>{
        
 // ,,,,,,,,,,,,,,,cards,,,,,,,,,,,,,,,,,,,,
 
-    const loadData=()=>{
-        let api="http://localhost:3000/cords";
-        axios.get(api).then((res)=>{
-            setMydata(res.data);
-        })
-     }
+   
+      const loadData = async () => {
+        try {
+            let apiUrls = [
+                "http://localhost:3000/cords",
+                "http://localhost:3000/kitchen",
+                "http://localhost:3000/light",
+                "http://localhost:3000/wall",
+                "http://localhost:3000/Furniture",
+                "http://localhost:3000/bath"
+            ];
+    
+            const responses = await Promise.all(apiUrls.map(url => axios.get(url)));
+            const allData = responses.flatMap(res => res.data);
+            setMydata(allData); // Combining all data into one array
+        } catch (error) {
+            console.error("Error fetching data", error);
+        }
+    };
 
-     const showData=()=>{
-        let api="http://localhost:3000/cords";
-        axios.get(api).then((res)=>{
-            setShowFilter(false);
-            setMydata(res.data);
-        })
-     }
+    
+    const showData = async () => {
+      try {
+          let apiUrls = [
+              "http://localhost:3000/cords",
+              "http://localhost:3000/kitchen",
+              "http://localhost:3000/light",
+              "http://localhost:3000/wall",
+              "http://localhost:3000/Furniture",
+              "http://localhost:3000/bath"
+          ];
+  
+          const responses = await Promise.all(apiUrls.map(url => axios.get(url)));
+          const allData = responses.flatMap(res => res.data);
+          setMydata(allData); // Combining all data into one array
+          setShowFilter(false)
+      } catch (error) {
+          console.error("Error fetching data", error);
+      }
+  };
+
+ 
     
      useEffect(()=>{
         loadData();
      }, []);
 
-    //  .,,,,,,,,,,,,,,,,,,,,,,,kitchen,,,,,,,,,,,,,,
-    const loadData1=()=>{
-      let api="http://localhost:3000/kitchen";
-      axios.get(api).then((res)=>{
-          setMydata(res.data);
-      })
-   }
+  //   //  .,,,,,,,,,,,,,,,,,,,,,,,kitchen,,,,,,,,,,,,,,
+  //   const loadData1=()=>{
+  //     let api="http://localhost:3000/kitchen";
+  //     axios.get(api).then((res)=>{
+  //         setMydata(res.data);
+  //     })
+  //  }
 
-   const showData1=()=>{
-      let api="http://localhost:3000/kitchen";
-      axios.get(api).then((res)=>{
-          setShowFilter(false);
-          setMydata(res.data);
-      })
-   }
+  //  const showData1=()=>{
+  //     let api="http://localhost:3000/kitchen";
+  //     axios.get(api).then((res)=>{
+  //         setShowFilter(false);
+  //         setMydata(res.data);
+  //     })
+  //  }
   
-   useEffect(()=>{
-      loadData1();
-   }, []);
+  //  useEffect(()=>{
+  //     loadData1();
+  //  }, []);
 
 //,,,,,,,,,,,,,,,,,,tryforall api,,,,,,,,,,,,,,,,,,,,,,,,,,,
 

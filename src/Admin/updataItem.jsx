@@ -1,87 +1,98 @@
+import { useSelector } from "react-redux";
+import Table from "react-bootstrap/Table";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-//   import { useNavigate } from "react-router-dom";
-    
- const UpdataItem=()=>{   
-    const[mydata, setmydata]=useState({});
+import { useParams } from "react-router-dom";
 
-    const loaddata=()=>{
-        let api="http://localhost:3000/light";
-        axios.get(api).then((res)=>{
-            console.log(res.data);
-            setmydata(res.data);
-        })
+const Updataitem = () => {
+  const { id } = useParams();
+  const [mydata, setMyData] = useState({});
+  const MyCart = useSelector((state) => state.mycart.cart);
+
+  // Fetch user data
+  const loaddata = () => {
+    let api = `http://localhost:3000/user/${id}`;
+    axios.get(api).then((res) => {
+      console.log(res.data)
+      setMyData(res.data)})
      
-    }
-    
-    useEffect(()=>{
-        loaddata();
-    },[])
+    };
 
-       
- //.................delet recode................
-const myRecDel=(id)=>{
-let api=`http://localhost:3000/light/${id}`;
-axios.delete(api).then((res)=>{
-    alert(" Data Delete Successfully!!")
-loaddata();
-})
-}
+  useEffect(() => {
+    loaddata();
+  }, []);
 
-// //.............edit data.........................
-// const myEdit=(id)=>{
-//     navigate(`/editrec/${id}`)
-// } 
-
-const ans= mydata.map((key)=>{
-    return(
-        <>
-          <tr  width="1050px"  fontWidth="2px" bgcolor="orangered" style={{color:"white", fontSize:"14px", border:"1px solid black "}} >
-          <td>{key.image}</td>
-      <td>{key.description}</td>
-      <td>{key.price}</td>
-      <td>{key.material}</td>
-      < td>{key.pack}</td>
-      <td>{key.dimansion}</td>
-    <td>
-                    <a href="#" onClick={()=>{myEdit(key.id)}}>
-                       <img src={edimg} width="30" height="30" /> 
-                     </a>
-                     
-                     <a  href="#" onClick={()=>{myRecDel(key.id)}}>
-                     <img src={delimg} width="30" height="30" /> 
-                     </a>
-      </td>
+ // Map user data
+  const ans = (
+    <tr>
+      <td>{mydata.name}</td>
+      <td>{mydata.email}</td>
+      <td>{mydata.phoneno}</td>
+      <td>{mydata.address}</td>
+      <td>{mydata.city}</td>
+      <td>{mydata.state}</td>
+      <td>{mydata.amount}</td>
+      <td>{mydata.paymethod}</td>
     </tr>
-    
-    
-    
-        </>
-    )
-    })
+  );
 
-    return(
-        <>
-          <div align="center" style={{marginTop:"20px",marginLeft:"270px", fontSize:"14px"}}>
-      <table  border="2px solid red" width="1050px"  >
-       <tr border="2px solid black" width="1050px"   bgcolor="lightblue" >
-           <th>#</th>
-        <th>Description</th>
-          <th> Price</th>
-            <th>Material</th>
-            <th>Pack</th>
-            <th>Dimansion</th>
-            <th>Action</th>
-           
-            
-        </tr>
-        {ans}
-       </table>
-       </div>
-        < ToastContainer/>
-        </>
-    )
-}
-export default UpdataItem;
+  // Map cart data
+  let totalAmount = 0;
+  const Data = MyCart.map((key) => {
+    totalAmount += key.price * key.qnty;
+    return (
+      <tr>
+        <td><img src={key.image} alt="Product" width="100" height="100" /></td>
+        <td>{key.description}</td>
+        <td>{key.price}</td>
+        <td>{key.qnty * key.price}</td>
+      </tr>
+    );
+  });
+
+  return (
+    <div>
+      <div align="center" style={{ marginTop: "20px", marginLeft: "270px" }}>
+        <table border="2px solid red" width="1050px">
+          <thead>
+            <tr className="table-header">
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone No.</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Amount</th>
+              <th>PayMethod</th>
+            </tr>
+          </thead>
+          <tbody>{ans}</tbody>
+        </table>
+      </div>
+
+      <div style={{ marginTop: "10px", marginLeft: "300px", width: "800px" }}>
+        <Table striped bordered hover style={{ width: "1000px" }}>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Data}
+            <tr>
+              <td>#</td>
+              <td></td>
+              <td>Total Amount:</td>
+              <td>{totalAmount}</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
+    </div>
+  );
+};
+
+export default Updataitem;

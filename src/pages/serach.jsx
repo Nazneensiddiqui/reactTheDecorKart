@@ -1,51 +1,50 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+
 import axios from "axios";
-import Card from "react-bootstrap/Card";
-import { useParams, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+
+import Card from 'react-bootstrap/Card';
+
+import { useDispatch } from 'react-redux';
 import { addToCart } from '../cartSlice';
+import { useNavigate } from 'react-router-dom';
 
-const Search = () => {
-  const { id } = useParams(); // URL parameter
-  const [query, setQuery] = useState(""); // Search query
-  const [products, setProducts] = useState([]); // Products list
-  const [loading, setLoading] = useState(false); // Loading state
+const Search=()=>{
+    const [pro, setPro]=useState("");
 
-  //addto cart ke liye
-  const dispatch= useDispatch();
-  const navigate=useNavigate()
 
-  // Fetch products from all APIs
-  const fetchProducts = async () => {
+    
+    const dispatch= useDispatch();
+    const navigate=useNavigate()
+  
+    //data ko get karne ke liye
+  const[data , setdata]=useState([])
+
+  const loadData = async () => {
     try {
-      setLoading(true);
+        let apiUrls = [
+            "http://localhost:3000/cords",
+            "http://localhost:3000/kitchen",
+            "http://localhost:3000/light",
+            "http://localhost:3000/wall",
+            "http://localhost:3000/Furniture",
+            "http://localhost:3000/bath"
+        ];
 
-      // API calls for different categories
-      const category1 = await axios.get(`http://localhost:3000/cords`);
-      const category2 = await axios.get(`http://localhost:3000/kitchen`);
-      const category3 = await axios.get(`http://localhost:3000/light`);
-
-      // Combine all products
-      const allProducts = [...category1.data, ...category2.data, ...category3.data];
-      setProducts(allProducts);
-      setLoading(false);
+        const responses = await Promise.all(apiUrls.map(url => axios.get(url)));
+        const allData = responses.flatMap(res => res.data);
+        setdata(allData); // Combining all data into one array
     } catch (error) {
-      console.error("Error fetching products:", error);
-      setLoading(false);
+        console.error("Error fetching data", error);
     }
-  };
+};
 
-  useEffect(() => {
-    fetchProducts(); // Fetch all products on component mount
-  }, []);
+  useEffect(()=>{
+    loadData()
+  },[])
 
-  // Filter products based on search query
-  const filteredProducts = products.filter((product) => {
-    const productDescription = product.description || ""; // Default empty string
-    return productDescription.toLowerCase().includes(query.toLowerCase());
-  });
 
-  //addto cart ke liye
+ 
+  
   const cartDataAdd=(id, price, desc, myimg)=>{
     dispatch(addToCart({id:id, price:price, description:desc, image:myimg, qnty:1}))
    }
@@ -53,26 +52,26 @@ const Search = () => {
    const Pro_Detail=(id)=>{
   navigate(`/prodect/${id}`)
    }
-
-  return (
-    <>
-  <div style={{ textAlign: "center", marginTop: "30px" }}>
-    <h1 style={{ color: "gray" }}>Search For Item's!</h1>
-      <input
-        type="text"
-        className="form-control"
-        placeholder="Search for Item's..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)} // Update query
-        style={{ padding: "10px", width: "300px", fontSize: "16px", border: "1px solid #ccc", borderRadius: "5px", marginBottom: "20px" }} 
-/>
-
-      {loading ? (<p>Loading...</p> ) : (
   
-       <div id="cardData">
-          {filteredProducts.map((key) => (
-         <div key={key.id} >
-               <Card style={{width:"230px", marginTop:"20px"}}>
+  
+
+
+ const ans=data.map((key)=>{
+      let mystr=key.description.toLowerCase(); 
+      console.log(mystr);
+      let myPro= pro.toLowerCase();   
+      let proStatus= mystr.includes(myPro);
+      console.log(proStatus);
+    
+     if (proStatus==true)
+     {
+
+
+   return(
+    <>
+    
+    <div>
+   <Card style={{width:"230px", marginTop:"20px"}}>
       {/* Image Section with Overlay */}
           <div className="card">
             <a href='#' onClick={()=>{Pro_Detail(key.id)}}>
@@ -89,16 +88,37 @@ const Search = () => {
          onClick={()=>{cartDataAdd(key.id, key.price, key.description, key.image)}} >add to cart</Button> */}
      </Card.Body>
    </Card>
-            </div>
-       
-          ))}
-        </div>
-     
-      )}
-    </div>
-   
+   </div>
+    
     </>
-  );
-};
+   )
+}
+ })
 
+
+
+    return(
+        <>
+        <center>
+           <h1 style={{marginTop:"50px",color:"gray"}}> Search Itme's</h1>
+         <input type="text" value={pro} placeholder="Enter Item Name:"
+           onChange={(e)=>{setPro(e.target.value)}}   
+            style={{
+            padding: "10px",
+            width: "300px",
+            fontSize: "16px",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+            marginBottom: "20px"
+          }}/>
+        </center>
+       
+
+         
+       <div id="cardData">
+         {ans}     
+       </div>
+        </>
+    )
+}
 export default Search;

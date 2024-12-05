@@ -40,7 +40,7 @@ const App=()=>{
              <Route path="contact" element={<Contact/>}/>
              <Route path="paydone" element={<PaymentDone/>}/>
              <Route path="search" element={<Search/>}/>
-             <Route path="updataitem" element={<UpdataItem/>}/>
+          
            </Route>
            </Routes>
            <Routes>
@@ -48,6 +48,7 @@ const App=()=>{
             <Route path="deshboard" element={<DeshBoard/>}/>
              <Route path="insertproduct" element={<InsertProduct/>}/>
              <Route path="display" element={<Display/>}/>
+             <Route path="updataitem" element={<UpdataItem/>}/>
             </Route>
            </Routes>
          </BrowserRouter>
